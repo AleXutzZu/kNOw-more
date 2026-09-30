@@ -111,7 +111,7 @@ export const RESULTS: Record<string, ResultNode> = {
       'You have identified classic "office housework." Taking this on without credit or compensation reinforces inequitable labor distribution. This should be rotated across the team or politely declined.',
     script:
       '"I would love to support the team here, but given my current focus on [Core Project], I won\'t be able to take on this coordination. Can we establish a rotating schedule or look at who handled this last?"',
-    tagColor: 'bg-primary/25 text-white border border-primary/40',
+    tagColor: 'bg-tag-bg text-tag-text border border-tag-border',
     badgeBg: 'bg-primary text-white',
     icon: AlertTriangle,
   },
@@ -122,8 +122,8 @@ export const RESULTS: Record<string, ResultNode> = {
       'This task is not tied to revenue, leadership visibility, or executive priorities. Absorbing it will drain your energy with zero career return.',
     script:
       '"Thanks for thinking of me for this. My capacity is fully committed to my primary deliverables this quarter, so I won\'t be able to take this on."',
-    tagColor: 'bg-blue-sky/20 text-accent border border-blue-sky/40',
-    badgeBg: 'bg-blue-sky text-bg-deep',
+    tagColor: 'bg-blue-sky/20 text-text-main border border-blue-sky/40',
+    badgeBg: 'bg-blue-sky text-slate-950',
     icon: XCircle,
   },
   result_renegotiate_resources: {
@@ -133,7 +133,7 @@ export const RESULTS: Record<string, ResultNode> = {
       'While the work has merit, absorbing it without headcount, budget, or timeline adjustments guarantees burnout. Do not accept it as pure overflow.',
     script:
       '"I am excited about this initiative. To ensure I can deliver at a high standard without compromising my current projects, we will need to reallocate [Project X] or adjust our timeline by two weeks."',
-    tagColor: 'bg-secondary/25 text-white border border-secondary/40',
+    tagColor: 'bg-secondary/20 text-text-main border border-secondary/40',
     badgeBg: 'bg-secondary text-white',
     icon: Zap,
   },
@@ -144,7 +144,7 @@ export const RESULTS: Record<string, ResultNode> = {
       'You are stepping in because someone else opted out. Rescuing the system masks the missing resource and places the penalty on you. Let the vacuum exist so the organization recognizes the gap.',
     script:
       '"I notice this task is unassigned. Since our team capacity is stretched, let\'s bring this to our next sync to discuss proper resourcing rather than picking it up ad-hoc."',
-    tagColor: 'bg-secondary/25 text-white border border-secondary/40',
+    tagColor: 'bg-secondary/20 text-text-main border border-secondary/40',
     badgeBg: 'bg-secondary text-white',
     icon: HelpCircle,
   },
@@ -155,7 +155,7 @@ export const RESULTS: Record<string, ResultNode> = {
       'Your hesitation is driven by discomfort or guilt rather than genuine professional risk. Practice delivering a calm, professional "no" without over-explaining or apologizing.',
     script:
       '"Thanks for asking! I won\'t be able to take this on right now. Wishing you the best in getting it sorted!"',
-    tagColor: 'bg-primary/25 text-white border border-primary/40',
+    tagColor: 'bg-tag-bg text-tag-text border border-tag-border',
     badgeBg: 'bg-primary text-white',
     icon: ShieldCheck,
   },
@@ -166,7 +166,7 @@ export const RESULTS: Record<string, ResultNode> = {
       'You are already relying on overtime to maintain baseline standards. Adding any extra work will tip you into burnout. Protect your health and capacity.',
     script:
       '"Due to my current workload and ongoing commitments, I have zero bandwidth for additional projects right now. I cannot take this on."',
-    tagColor: 'bg-primary-dark/80 text-white border border-primary/50',
+    tagColor: 'bg-primary-dark/20 text-text-main border border-primary-dark/40',
     badgeBg: 'bg-primary-dark text-accent border border-accent/40',
     icon: XCircle,
   },
@@ -177,8 +177,8 @@ export const RESULTS: Record<string, ResultNode> = {
       'All conditions are met: clear career ROI, capacity confirmed, and high impact. Take on the work, but ensure the agreement and expectations are locked in writing with your manager.',
     script:
       '"I\'m aligned on taking this on as discussed. I\'ll document our trade-offs and send a recap so we are aligned on success metrics for my upcoming review cycle."',
-    tagColor: 'bg-accent/20 text-accent border border-accent/40',
-    badgeBg: 'bg-accent text-bg-deep',
+    tagColor: 'bg-blue-cyan/25 text-text-main border border-blue-cyan/40',
+    badgeBg: 'bg-blue-cyan text-slate-950',
     icon: CheckCircle2,
   },
   result_timebox_offer: {
@@ -188,8 +188,8 @@ export const RESULTS: Record<string, ResultNode> = {
       'This is moderately useful but lacks direct promotion ROI. Do not take on full ownership; offer a minimal, time-boxed contribution instead.',
     script:
       '"I can spend a maximum of 2 hours this week consulting on this, but I cannot own the deliverable. Let me know if that support helps!"',
-    tagColor: 'bg-blue-sky/20 text-accent border border-blue-sky/40',
-    badgeBg: 'bg-blue-sky text-bg-deep',
+    tagColor: 'bg-blue-sky/20 text-text-main border border-blue-sky/40',
+    badgeBg: 'bg-blue-sky text-slate-950',
     icon: Award,
   },
 };

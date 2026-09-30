@@ -1,5 +1,71 @@
 @import "tailwindcss";
 
+:root {
+  /* White Mode Tokens (Backgrounds use soft blue shades & white) */
+  --color-canvas-from: #f3f9fc;
+  --color-canvas-via: #e3f1f7;
+  --color-canvas-to: #d0e7f2;
+  --color-card-bg: rgba(255, 255, 255, 0.96);
+  --color-card-border: rgba(99, 180, 209, 0.35);
+  --color-header-bg: rgba(255, 255, 255, 0.9);
+  --color-header-border: rgba(99, 180, 209, 0.3);
+  --color-text-main: #0f172a;
+  --color-text-muted: #475569;
+  --color-text-subtle: #64748b;
+  --color-surface-base: rgba(227, 241, 247, 0.6);
+  --color-surface-hover: rgba(227, 241, 247, 0.9);
+  --color-surface-border: rgba(99, 180, 209, 0.3);
+  --color-nav-bg: rgba(227, 241, 247, 0.8);
+  --color-btn-neutral-bg: #ffffff;
+  --color-btn-neutral-hover: #f8fafc;
+  --color-btn-neutral-border: #cbd5e1;
+  --color-btn-neutral-text: #1e293b;
+  --color-btn-neutral-badge: #e2e8f0;
+  --color-btn-neutral-badge-text: #475569;
+  --color-script-bg: #ffffff;
+  --color-script-border: rgba(99, 180, 209, 0.35);
+  --color-script-text: #0f172a;
+  --color-progress-track: #e2e8f0;
+  --color-tag-bg: rgba(148, 72, 188, 0.12);
+  --color-tag-text: #9448bc;
+  --color-tag-border: rgba(148, 72, 188, 0.25);
+  --color-footer-border: #e2e8f0;
+  --color-footer-text: #64748b;
+}
+
+.dark {
+  /* Dark Mode Tokens (Deep ocean & midnight blue shades) */
+  --color-canvas-from: #0c1626;
+  --color-canvas-via: #12213a;
+  --color-canvas-to: #182e50;
+  --color-card-bg: rgba(20, 36, 63, 0.9);
+  --color-card-border: rgba(99, 180, 209, 0.2);
+  --color-header-bg: rgba(18, 33, 58, 0.85);
+  --color-header-border: rgba(99, 180, 209, 0.2);
+  --color-text-main: #ffffff;
+  --color-text-muted: #63b4d1;
+  --color-text-subtle: rgba(255, 255, 255, 0.6);
+  --color-surface-base: rgba(24, 46, 80, 0.5);
+  --color-surface-hover: rgba(24, 46, 80, 0.8);
+  --color-surface-border: rgba(99, 180, 209, 0.2);
+  --color-nav-bg: rgba(24, 46, 80, 0.6);
+  --color-btn-neutral-bg: rgba(24, 46, 80, 0.8);
+  --color-btn-neutral-hover: rgba(24, 46, 80, 1);
+  --color-btn-neutral-border: rgba(255, 255, 255, 0.1);
+  --color-btn-neutral-text: #ffffff;
+  --color-btn-neutral-badge: rgba(255, 255, 255, 0.1);
+  --color-btn-neutral-badge-text: rgba(255, 255, 255, 0.8);
+  --color-script-bg: rgba(12, 22, 38, 0.8);
+  --color-script-border: rgba(99, 180, 209, 0.3);
+  --color-script-text: #90fcf9;
+  --color-progress-track: rgba(24, 46, 80, 0.8);
+  --color-tag-bg: rgba(148, 72, 188, 0.25);
+  --color-tag-text: #ffffff;
+  --color-tag-border: rgba(148, 72, 188, 0.4);
+  --color-footer-border: rgba(99, 180, 209, 0.15);
+  --color-footer-text: rgba(255, 255, 255, 0.5);
+}
+
 @theme {
   /* 5 Core Palette Hex Codes */
   --color-brand-cyan: #90fcf9;
@@ -8,14 +74,7 @@
   --color-brand-purple: #9448bc;
   --color-brand-plum: #480355;
 
-  /* Blue Background System (derived from #7699D4, #63B4D1, #90FCF9) */
-  --color-bg-deep: #0c1626;
-  --color-bg-dark: #12213a;
-  --color-bg-surface: #182e50;
-  --color-bg-card: #14243f;
-  --color-bg-subtle: #243d66;
-
-  /* Palette Named Roles */
+  /* Direct Palette Shades */
   --color-blue-cyan: #90fcf9;
   --color-blue-sky: #63b4d1;
   --color-blue-periwinkle: #7699d4;
@@ -28,6 +87,37 @@
   --color-accent: #90fcf9;
   --color-highlight: #63b4d1;
   --color-secondary: #7699d4;
+
+  /* Mode-aware Adaptive Tokens */
+  --color-canvas-from: var(--color-canvas-from);
+  --color-canvas-via: var(--color-canvas-via);
+  --color-canvas-to: var(--color-canvas-to);
+  --color-card-bg: var(--color-card-bg);
+  --color-card-border: var(--color-card-border);
+  --color-header-bg: var(--color-header-bg);
+  --color-header-border: var(--color-header-border);
+  --color-text-main: var(--color-text-main);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-subtle: var(--color-text-subtle);
+  --color-surface-base: var(--color-surface-base);
+  --color-surface-hover: var(--color-surface-hover);
+  --color-surface-border: var(--color-surface-border);
+  --color-nav-bg: var(--color-nav-bg);
+  --color-btn-neutral-bg: var(--color-btn-neutral-bg);
+  --color-btn-neutral-hover: var(--color-btn-neutral-hover);
+  --color-btn-neutral-border: var(--color-btn-neutral-border);
+  --color-btn-neutral-text: var(--color-btn-neutral-text);
+  --color-btn-neutral-badge: var(--color-btn-neutral-badge);
+  --color-btn-neutral-badge-text: var(--color-btn-neutral-badge-text);
+  --color-script-bg: var(--color-script-bg);
+  --color-script-border: var(--color-script-border);
+  --color-script-text: var(--color-script-text);
+  --color-progress-track: var(--color-progress-track);
+  --color-tag-bg: var(--color-tag-bg);
+  --color-tag-text: var(--color-tag-text);
+  --color-tag-border: var(--color-tag-border);
+  --color-footer-border: var(--color-footer-border);
+  --color-footer-text: var(--color-footer-text);
 }
 
 @layer utilities {

@@ -36,26 +36,26 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onReset }) => {
           >
             {result.phase}
           </span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-text-main tracking-tight">
             {result.title}
           </h2>
         </div>
       </div>
 
       {/* Outcome Card */}
-      <div className="bg-bg-surface/50 border border-blue-sky/20 rounded-2xl p-6 sm:p-8 space-y-4">
-        <h4 className="text-sm font-semibold text-accent uppercase tracking-wider">
+      <div className="bg-surface-base border border-surface-border rounded-2xl p-6 sm:p-8 space-y-4">
+        <h4 className="text-sm font-semibold text-primary uppercase tracking-wider">
           Strategic Verdict
         </h4>
-        <p className="text-white/90 text-base sm:text-lg leading-relaxed">
+        <p className="text-text-main text-base sm:text-lg leading-relaxed">
           {result.description}
         </p>
 
-        <div className="pt-4 border-t border-blue-sky/20">
-          <h5 className="text-xs font-bold text-blue-sky uppercase tracking-wider mb-2">
+        <div className="pt-4 border-t border-surface-border">
+          <h5 className="text-xs font-bold text-text-muted uppercase tracking-wider mb-2">
             Recommended Action Script / Next Step:
           </h5>
-          <div className="p-4 rounded-xl bg-bg-deep/80 border border-blue-sky/30 text-accent text-sm italic">
+          <div className="p-4 rounded-xl bg-script-bg border border-script-border text-script-text text-sm italic shadow-xs">
             {result.script}
           </div>
         </div>
@@ -66,9 +66,9 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onReset }) => {
         <button
           type="button"
           onClick={onReset}
-          className="flex-1 py-4 px-6 rounded-xl bg-bg-surface/80 hover:bg-bg-surface text-white font-bold text-sm transition-all border border-blue-sky/30 flex items-center justify-center space-x-2 cursor-pointer"
+          className="flex-1 py-4 px-6 rounded-xl bg-btn-neutral-bg hover:bg-btn-neutral-hover text-btn-neutral-text font-bold text-sm transition-all border border-btn-neutral-border flex items-center justify-center space-x-2 cursor-pointer shadow-xs"
         >
-          <RotateCcw className="w-4 h-4 text-blue-sky" />
+          <RotateCcw className="w-4 h-4 text-primary" />
           <span>Evaluate Another Request</span>
         </button>
         <button

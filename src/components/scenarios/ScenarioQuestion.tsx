@@ -19,7 +19,7 @@ export const ScenarioQuestion: React.FC<ScenarioQuestionProps> = ({
         <button
           type="button"
           onClick={onBack}
-          className="text-xs text-white/60 hover:text-white flex items-center space-x-1 transition-colors cursor-pointer"
+          className="text-xs text-text-subtle hover:text-text-main flex items-center space-x-1 transition-colors cursor-pointer"
         >
           <ChevronRight className="w-4 h-4 rotate-180" />
           <span>Back to Scenarios</span>
@@ -27,19 +27,19 @@ export const ScenarioQuestion: React.FC<ScenarioQuestionProps> = ({
       </div>
 
       {/* Situation Card */}
-      <div className="bg-bg-surface/50 border border-blue-sky/20 rounded-2xl p-6 sm:p-8 space-y-4">
-        <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/25 text-white border border-primary/40">
+      <div className="bg-surface-base border border-surface-border rounded-2xl p-6 sm:p-8 space-y-4">
+        <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-tag-bg text-tag-text border border-tag-border">
           {scenario.category}
         </span>
-        <h3 className="text-xl font-bold text-white">{scenario.title}</h3>
-        <p className="text-white/90 text-sm sm:text-base leading-relaxed">
+        <h3 className="text-xl font-bold text-text-main">{scenario.title}</h3>
+        <p className="text-text-main text-sm sm:text-base leading-relaxed">
           {scenario.situation}
         </p>
       </div>
 
       {/* Options Prompt */}
       <div className="space-y-3">
-        <h4 className="text-xs font-bold text-blue-sky uppercase tracking-wider">
+        <h4 className="text-xs font-bold text-text-muted uppercase tracking-wider">
           How do you respond? Choose an approach:
         </h4>
         <div className="space-y-3">
@@ -48,9 +48,9 @@ export const ScenarioQuestion: React.FC<ScenarioQuestionProps> = ({
               type="button"
               key={option.id}
               onClick={() => onSelectOption(option)}
-              className="w-full text-left p-4 rounded-xl border border-white/10 bg-bg-surface/70 hover:bg-bg-surface hover:border-blue-sky text-white font-medium text-sm transition-all flex items-start space-x-3 group cursor-pointer"
+              className="w-full text-left p-4 rounded-xl border border-btn-neutral-border bg-btn-neutral-bg hover:bg-btn-neutral-hover hover:border-primary text-btn-neutral-text font-medium text-sm transition-all flex items-start space-x-3 group cursor-pointer shadow-xs"
             >
-              <span className="w-6 h-6 rounded-lg bg-white/10 group-hover:bg-primary text-accent group-hover:text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 transition-colors">
+              <span className="w-6 h-6 rounded-lg bg-btn-neutral-badge text-btn-neutral-badge-text group-hover:bg-primary group-hover:text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 transition-colors">
                 {option.label}
               </span>
               <span className="leading-snug">{option.text}</span>

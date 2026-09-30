@@ -21,7 +21,7 @@ export const ScenarioFeedback: React.FC<ScenarioFeedbackProps> = ({
         <button
           type="button"
           onClick={onBackToOptions}
-          className="text-xs text-white/60 hover:text-white flex items-center space-x-1 transition-colors cursor-pointer"
+          className="text-xs text-text-subtle hover:text-text-main flex items-center space-x-1 transition-colors cursor-pointer"
         >
           <ChevronRight className="w-4 h-4 rotate-180" />
           <span>Back to Options</span>
@@ -41,28 +41,28 @@ export const ScenarioFeedback: React.FC<ScenarioFeedbackProps> = ({
           >
             {option.strategyType}
           </span>
-          <h3 className="text-xl font-extrabold text-white tracking-tight">
+          <h3 className="text-xl font-extrabold text-text-main tracking-tight">
             {option.title}
           </h3>
         </div>
       </div>
 
       {/* Feedback Card */}
-      <div className="bg-bg-surface/50 border border-blue-sky/20 rounded-2xl p-6 sm:p-8 space-y-5">
+      <div className="bg-surface-base border border-surface-border rounded-2xl p-6 sm:p-8 space-y-5">
         <div>
-          <h4 className="text-xs font-bold text-accent uppercase tracking-wider mb-2">
+          <h4 className="text-xs font-bold text-primary uppercase tracking-wider mb-2">
             Psychological &amp; Career Impact
           </h4>
-          <p className="text-white/90 text-sm sm:text-base leading-relaxed">
+          <p className="text-text-main text-sm sm:text-base leading-relaxed">
             {option.feedback}
           </p>
         </div>
 
-        <div className="pt-4 border-t border-blue-sky/20">
-          <h4 className="text-xs font-bold text-blue-sky uppercase tracking-wider mb-2">
+        <div className="pt-4 border-t border-surface-border">
+          <h4 className="text-xs font-bold text-text-muted uppercase tracking-wider mb-2">
             Ready-to-Use Script:
           </h4>
-          <div className="p-4 rounded-xl bg-bg-deep/80 border border-blue-sky/30 text-accent text-sm italic">
+          <div className="p-4 rounded-xl bg-script-bg border border-script-border text-script-text text-sm italic shadow-xs">
             {option.script}
           </div>
         </div>
@@ -75,7 +75,7 @@ export const ScenarioFeedback: React.FC<ScenarioFeedbackProps> = ({
           onClick={onTryAnother}
           className="flex-1 py-4 px-6 rounded-xl bg-linear-to-r from-primary to-primary-dark hover:from-primary/90 hover:to-primary-dark/90 text-white font-bold text-sm shadow-lg shadow-primary/30 transition-all flex items-center justify-center space-x-2 cursor-pointer"
         >
-          <RotateCcw className="w-4 h-4 text-blue-sky" />
+          <RotateCcw className="w-4 h-4 text-white" />
           <span>Try Another Scenario</span>
         </button>
       </div>

@@ -8,13 +8,13 @@ interface WelcomeCardProps {
 export const WelcomeCard: React.FC<WelcomeCardProps> = ({ onStart }) => {
   return (
     <div className="text-center space-y-6 py-4 animate-fade-in">
-      <div className="inline-flex p-3.5 rounded-2xl bg-primary/20 text-accent mb-2 border border-primary/40 shadow-lg shadow-primary/10">
+      <div className="inline-flex p-3.5 rounded-2xl bg-tag-bg text-primary mb-2 border border-tag-border shadow-md shadow-primary/10">
         <Sparkles className="w-8 h-8" />
       </div>
-      <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+      <h2 className="text-2xl sm:text-3xl font-extrabold text-text-main tracking-tight">
         Should You Take On That Extra Work?
       </h2>
-      <p className="text-white/85 text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
+      <p className="text-text-muted text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
         Navigate invisible labor, office housework, psychological traps, and strategic ROI with this advanced decision engine designed to protect your bandwidth and career trajectory.
       </p>
       <div className="pt-4">
@@ -27,7 +27,7 @@ export const WelcomeCard: React.FC<WelcomeCardProps> = ({ onStart }) => {
           <ArrowRight className="w-5 h-5" />
         </button>
       </div>
-      <div className="pt-6 border-t border-blue-sky/15 flex flex-wrap justify-center gap-6 text-xs text-blue-sky font-medium">
+      <div className="pt-6 border-t border-footer-border flex flex-wrap justify-center gap-6 text-xs text-text-muted font-medium">
         <span>✨ 4 Strategic Phases</span>
         <span>🛡️ Burnout Prevention</span>
         <span>⚡ Zero Ambiguity</span>

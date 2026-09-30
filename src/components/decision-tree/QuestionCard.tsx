@@ -25,11 +25,11 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
     <div className="space-y-8 animate-fade-in">
       {/* Progress Bar & Phase Header */}
       <div className="space-y-3">
-        <div className="flex justify-between items-center text-xs font-semibold tracking-wider uppercase text-accent">
+        <div className="flex justify-between items-center text-xs font-semibold tracking-wider uppercase text-primary">
           <span>{question.phase}</span>
-          <span className="text-white/70">{`Step ${stepIndex + 1} of ${totalSteps}`}</span>
+          <span className="text-text-subtle">{`Step ${stepIndex + 1} of ${totalSteps}`}</span>
         </div>
-        <div className="w-full bg-bg-surface/80 h-2.5 rounded-full overflow-hidden border border-blue-sky/20">
+        <div className="w-full bg-progress-track h-2.5 rounded-full overflow-hidden border border-surface-border">
           <div
             className="bg-linear-to-r from-primary via-secondary to-accent h-full transition-all duration-500 rounded-full"
             style={{ width: `${progressPercent}%` }}
@@ -38,14 +38,14 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       </div>
 
       {/* Question Card */}
-      <div className="bg-bg-surface/50 border border-blue-sky/20 rounded-2xl p-6 sm:p-8 space-y-6 shadow-inner">
-        <div className="inline-block px-3 py-1 rounded-full bg-bg-subtle text-accent text-xs font-semibold border border-blue-sky/30">
+      <div className="bg-surface-base border border-surface-border rounded-2xl p-6 sm:p-8 space-y-6 shadow-xs">
+        <div className="inline-block px-3 py-1 rounded-full bg-card-bg text-primary text-xs font-semibold border border-surface-border shadow-xs">
           {question.tag}
         </div>
-        <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug">
+        <h3 className="text-xl sm:text-2xl font-bold text-text-main leading-snug">
           {question.text}
         </h3>
-        <p className="text-sm text-blue-sky/90 italic">{question.context}</p>
+        <p className="text-sm text-text-muted italic">{question.context}</p>
       </div>
 
       {/* Yes / No Action Buttons */}
@@ -53,9 +53,9 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         <button
           type="button"
           onClick={() => onAnswer(false)}
-          className="group flex items-center justify-center space-x-3 p-4 rounded-xl border border-white/10 bg-bg-surface/80 hover:bg-bg-surface hover:border-blue-sky text-white font-bold transition-all shadow-sm cursor-pointer"
+          className="group flex items-center justify-center space-x-3 p-4 rounded-xl border border-btn-neutral-border bg-btn-neutral-bg hover:bg-btn-neutral-hover hover:border-blue-sky text-btn-neutral-text font-bold transition-all shadow-xs cursor-pointer"
         >
-          <span className="w-8 h-8 rounded-lg bg-white/10 group-hover:bg-blue-sky/25 text-white/80 group-hover:text-accent flex items-center justify-center transition-colors text-xs font-bold">
+          <span className="w-8 h-8 rounded-lg bg-btn-neutral-badge text-btn-neutral-badge-text group-hover:bg-blue-sky/20 group-hover:text-primary flex items-center justify-center transition-colors text-xs font-bold">
             NO
           </span>
           <span className="text-base">No</span>
@@ -63,9 +63,9 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         <button
           type="button"
           onClick={() => onAnswer(true)}
-          className="group flex items-center justify-center space-x-3 p-4 rounded-xl border border-primary/50 hover:border-accent bg-linear-to-r from-primary/30 to-primary-dark/30 hover:from-primary/50 hover:to-primary-dark/50 text-white font-bold transition-all shadow-sm cursor-pointer"
+          className="group flex items-center justify-center space-x-3 p-4 rounded-xl border border-primary/40 hover:border-primary bg-linear-to-r from-primary/15 to-primary-dark/15 hover:from-primary/25 hover:to-primary-dark/25 text-text-main font-bold transition-all shadow-xs cursor-pointer"
         >
-          <span className="w-8 h-8 rounded-lg bg-primary group-hover:bg-primary/80 text-white flex items-center justify-center transition-colors text-xs font-bold">
+          <span className="w-8 h-8 rounded-lg bg-primary group-hover:bg-primary/90 text-white flex items-center justify-center transition-colors text-xs font-bold shadow-xs">
             YES
           </span>
           <span className="text-base">Yes</span>
@@ -78,7 +78,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           <button
             type="button"
             onClick={onPrevious}
-            className="text-xs text-white/60 hover:text-white flex items-center space-x-1 transition-colors cursor-pointer"
+            className="text-xs text-text-subtle hover:text-text-main flex items-center space-x-1 transition-colors cursor-pointer"
           >
             <ChevronRight className="w-4 h-4 rotate-180" />
             <span>Previous Question</span>
