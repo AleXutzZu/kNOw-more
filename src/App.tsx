@@ -1,122 +1,40 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import { TabNavigation } from './components/common/TabNavigation';
+import { DecisionTreeModule } from './components/decision-tree/DecisionTreeModule';
+import { Footer } from './components/layout/Footer';
+import { Header } from './components/layout/Header';
+import { ScenarioRolePlayModule } from './components/scenarios/ScenarioRolePlayModule';
+import type { ActiveTab } from './types/navigation';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App(): React.JSX.Element {
+  const [activeTab, setActiveTab] = useState<ActiveTab>('tree');
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="min-h-screen bg-linear-to-br from-slate-950 via-purple-950 to-slate-900 text-slate-100 flex flex-col justify-between antialiased selection:bg-rose-500 selection:text-white">
+      {/* Header with App Name */}
+      <Header />
 
-      <div className="ticks"></div>
+      {/* Main Content Area */}
+      <main className="grow flex items-center justify-center p-4 sm:p-6 md:p-8">
+        <div className="w-full max-w-3xl bg-slate-950/80 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl p-6 sm:p-10 relative overflow-hidden transition-all duration-300">
+          {/* Ambient Glow Effects */}
+          <div className="absolute -top-32 -right-32 w-64 h-64 bg-rose-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          {/* Navigation Tabs */}
+          <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+          {/* Render Active View */}
+          {activeTab === 'tree' ? (
+            <DecisionTreeModule />
+          ) : (
+            <ScenarioRolePlayModule />
+          )}
+        </div>
+      </main>
+
+      {/* Footer */}
+      <Footer />
+    </div>
+  );
 }
-
-export default App
