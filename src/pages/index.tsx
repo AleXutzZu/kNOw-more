@@ -7,6 +7,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import meetTeamImg from '../assets/meet-team.jpeg';
 
 export const LandingPage: React.FC = () => {
   return (
@@ -171,12 +172,12 @@ export const LandingPage: React.FC = () => {
             </p>
           </div>
 
-          {/* Sample group photo image */}
-          <div className="rounded-2xl overflow-hidden border border-surface-border shadow-md bg-surface-base">
+          {/* Group photo image */}
+          <div className="rounded-2xl overflow-hidden border border-surface-border shadow-md bg-surface-base max-w-2xl mx-auto">
             <img
-              src="/team-placeholder.svg"
+              src={meetTeamImg}
               alt="kNOw MORE team - 6 recent computer science graduates inspired by womENcourage 2026, Nice, France"
-              className="w-full h-auto object-cover max-h-96"
+              className="w-full h-auto object-cover"
             />
           </div>
         </div>
