@@ -29,7 +29,7 @@ export const TabNavigation: React.FC = () => {
         }
       >
         <Users className="w-4 h-4" />
-        <span>Scenario Role Play</span>
+        <span>Scenario exercises</span>
       </NavLink>
     </div>
   );

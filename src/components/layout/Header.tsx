@@ -20,12 +20,9 @@ export const Header: React.FC = () => {
         <div>
           <h1 className="text-lg font-bold tracking-tight text-text-main flex items-center space-x-2">
             <span className="group-hover:text-primary transition-colors">kNOw MORE</span>
-            <span className="text-xs px-2 py-0.5 rounded-full bg-tag-bg text-tag-text border border-tag-border font-semibold">
-              Pro Edition
-            </span>
           </h1>
           <p className="text-xs text-blue-sky font-medium tracking-wide hidden sm:block">
-            Strategic Work &amp; Boundary Blueprint for Women
+            Work &amp; Boundary Decision Assistant
           </p>
         </div>
       </Link>
