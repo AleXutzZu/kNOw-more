@@ -1,22 +1,29 @@
-import type { LucideIcon } from 'lucide-react';
+export type ResponseId = 'accept' | 'decline' | 'delegate';
 
-export interface ScenarioOption {
-  id: string;
+export interface ResponseImpact {
+  psychological: string;
+  career: string;
+  reflection: string;
+}
+
+export interface ScenarioResponse {
+  id: ResponseId;
   label: string;
   text: string;
-  strategyType: string;
-  title: string;
-  feedback: string;
-  script: string;
-  tagColor: string;
-  badgeBg: string;
-  icon: LucideIcon;
+  impact: ResponseImpact;
 }
 
 export interface Scenario {
   id: number;
   category: string;
   title: string;
-  situation: string;
-  options: ScenarioOption[];
+  context: string;
+  request: string;
+  responses: ScenarioResponse[];
 }
+
+export const RESPONSE_LABELS: Record<ResponseId, string> = {
+  accept: 'Accept the task',
+  decline: 'Decline because of time',
+  delegate: 'Suggest someone else',
+};
