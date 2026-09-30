@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GitBranch, Home, Menu, Moon, Sun, Users, X } from 'lucide-react';
+import { GitBranch, Home, Map, Menu, Moon, Sun, Users, X } from 'lucide-react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 
@@ -80,6 +80,20 @@ export const Header: React.FC = () => {
             >
               <Users className="w-3.5 h-3.5" />
               <span>Scenarios</span>
+            </NavLink>
+
+            <NavLink
+              to="/roadmap"
+              className={({ isActive }) =>
+                `flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  isActive
+                    ? 'bg-primary text-white shadow-xs'
+                    : 'text-text-muted hover:text-text-main hover:bg-surface-base'
+                }`
+              }
+            >
+              <Map className="w-3.5 h-3.5" />
+              <span>Roadmap</span>
             </NavLink>
           </nav>
 
@@ -164,6 +178,21 @@ export const Header: React.FC = () => {
           >
             <Users className="w-4 h-4" />
             <span>Scenarios</span>
+          </NavLink>
+
+          <NavLink
+            to="/roadmap"
+            onClick={closeMobileMenu}
+            className={({ isActive }) =>
+              `flex items-center space-x-2.5 px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+                isActive
+                  ? 'bg-primary text-white shadow-xs font-bold'
+                  : 'text-text-muted hover:text-text-main hover:bg-surface-base'
+              }`
+            }
+          >
+            <Map className="w-4 h-4" />
+            <span>Roadmap</span>
           </NavLink>
         </div>
       )}

@@ -3,11 +3,15 @@ import {
   ArrowRight,
   Bot,
   Clock,
+  Download,
+  Eye,
+  Map,
   Users,
   Zap,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import meetTeamImg from '../assets/meet-team.jpeg';
+import roadmapImg from '../assets/roadmap.jpeg';
 
 export const LandingPage: React.FC = () => {
   return (
@@ -155,6 +159,56 @@ export const LandingPage: React.FC = () => {
           <p className="text-xs sm:text-sm text-text-muted leading-relaxed">
             Constantly staying late or working weekends? Get direct actionable scripts to negotiate workload trade-offs and protect your personal time.
           </p>
+        </div>
+      </section>
+
+      {/* Cost-effective Visual Roadmap Section */}
+      <section className="bg-card-bg backdrop-blur-xl border border-card-border rounded-3xl shadow-xl p-8 sm:p-10 relative overflow-hidden transition-all duration-300">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="space-y-4 max-w-xl text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-text-main tracking-tight">
+              Looking for a quick guide?
+            </h2>
+            <p className="text-sm sm:text-base text-text-muted leading-relaxed">
+              Access a corporate-tailored <strong>decision roadmap</strong> as a high-resolution visual flowchart to keep at your desk, share with teammates, or download for offline reference.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 pt-2 justify-center md:justify-start">
+              <Link
+                to="/roadmap"
+                className="px-5 py-3 rounded-xl bg-linear-to-r from-primary to-primary-dark hover:from-primary/90 hover:to-primary-dark/90 text-white font-bold text-sm shadow-md shadow-primary/25 flex items-center justify-center space-x-2 transition-all"
+              >
+                <Eye className="w-4 h-4" />
+                <span>View full screen roadmap</span>
+              </Link>
+              <a
+                href={roadmapImg}
+                download="kNOw-MORE-decision-roadmap.jpeg"
+                className="px-5 py-3 rounded-xl bg-surface-base hover:bg-surface-hover text-text-main font-bold text-sm border border-surface-border flex items-center justify-center space-x-2 transition-all"
+              >
+                <Download className="w-4 h-4 text-primary" />
+                <span>Download guide (JPEG)</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Thumbnail preview link */}
+          <Link
+            to="/roadmap"
+            className="w-full md:w-80 shrink-0 group rounded-2xl overflow-hidden border border-surface-border hover:border-primary shadow-lg transition-all transform hover:scale-[1.02] relative"
+            title="Open full roadmap guide"
+          >
+            <img
+              src={roadmapImg}
+              alt="kNOw MORE roadmap guide preview"
+              className="w-full h-52 object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-4">
+              <span className="text-xs font-bold text-white flex items-center space-x-1.5 group-hover:text-accent transition-colors">
+                <Map className="w-4 h-4" />
+                <span>Click to inspect &amp; zoom</span>
+              </span>
+            </div>
+          </Link>
         </div>
       </section>
 

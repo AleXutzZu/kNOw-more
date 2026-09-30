@@ -6,6 +6,8 @@ import DecisionTreeLayout from './pages/decision-tree/layout';
 import DecisionTreePage from './pages/decision-tree/index';
 import ScenariosLayout from './pages/scenarios/layout';
 import ScenariosPage from './pages/scenarios/index';
+import RoadmapLayout from './pages/roadmap/layout';
+import RoadmapPage from './pages/roadmap/index';
 import NotFoundPage from './pages/not_found.tsx';
 
 export default function App(): React.JSX.Element {
@@ -21,6 +23,10 @@ export default function App(): React.JSX.Element {
 
           <Route path="scenarios" element={<ScenariosLayout />}>
             <Route index element={<ScenariosPage />} />
+          </Route>
+
+          <Route path="roadmap" element={<RoadmapLayout />}>
+            <Route index element={<RoadmapPage />} />
           </Route>
 
           <Route path="*" element={<NotFoundPage />} />

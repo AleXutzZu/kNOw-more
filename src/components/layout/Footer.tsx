@@ -13,10 +13,13 @@ export const Footer: React.FC = () => {
             Home
           </Link>
           <Link to="/decision-tree" className="hover:text-text-main transition-colors">
-            Decision Tree
+            Decision tree
           </Link>
           <Link to="/scenarios" className="hover:text-text-main transition-colors">
             Scenarios
+          </Link>
+          <Link to="/roadmap" className="hover:text-text-main transition-colors">
+            Roadmap guide
           </Link>
         </div>
       </div>
