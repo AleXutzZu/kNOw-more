@@ -5,22 +5,32 @@ import {
   NEXT,
   OUTCOME_LABEL,
   QUESTIONS,
+  getExplanation,
 } from '../../data/decisionTreeData';
-import type { DecisionTrailItem, OutcomeType } from '../../types/decisionTree';
+import type {
+  DecisionQuestion,
+  DecisionTrailItem,
+  OutcomeType,
+} from '../../types/decisionTree';
 import {
   ArrowLeft,
   CheckCircle2,
-  ChevronRight,
   ListTree,
   RotateCcw,
   Sparkles,
   XCircle,
 } from 'lucide-react';
 
+interface ResultState {
+  outcome: OutcomeType;
+  question: DecisionQuestion;
+  answer: 'yes' | 'no';
+}
+
 export const DecisionTreeModule: React.FC = () => {
   const [view, setView] = useState<'walk' | 'map'>('walk');
   const [step, setStep] = useState<number>(0);
-  const [result, setResult] = useState<OutcomeType | null>(null);
+  const [result, setResult] = useState<ResultState | null>(null);
   const [trail, setTrail] = useState<DecisionTrailItem[]>([]);
 
   const q = QUESTIONS[step];
@@ -32,7 +42,11 @@ export const DecisionTreeModule: React.FC = () => {
     if (outcome === NEXT) {
       setStep((prev) => prev + 1);
     } else {
-      setResult(outcome);
+      setResult({
+        outcome,
+        question: q,
+        answer: answerChoice,
+      });
     }
   };
 
@@ -92,61 +106,88 @@ export const DecisionTreeModule: React.FC = () => {
         result ? (
           /* Result View */
           <div className="space-y-6 animate-fade-in">
-            <div
-              className={`rounded-2xl p-6 sm:p-8 border shadow-md space-y-4 ${
-                result === ACCEPT
-                  ? 'bg-accent/15 border-accent/40 text-text-main'
-                  : 'bg-primary/10 border-primary/30 text-text-main'
-              }`}
-              role="status"
-            >
-              <div className="flex items-center space-x-3">
+            {(() => {
+              const accepted = result.outcome === ACCEPT;
+              const explanation = getExplanation(
+                result.question.id,
+                result.answer
+              );
+
+              return (
                 <div
-                  className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${
-                    result === ACCEPT
-                      ? 'bg-accent/25 text-primary'
-                      : 'bg-primary/20 text-primary'
+                  className={`rounded-2xl p-6 sm:p-8 border shadow-md space-y-5 ${
+                    accepted
+                      ? 'bg-accent/15 border-accent/40 text-text-main'
+                      : 'bg-primary/10 border-primary/30 text-text-main'
                   }`}
+                  role="status"
                 >
-                  {result === ACCEPT ? (
-                    <CheckCircle2 className="w-7 h-7 text-primary" />
-                  ) : (
-                    <XCircle className="w-7 h-7 text-primary" />
-                  )}
-                </div>
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-primary">
-                    Decision Outcome
-                  </span>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-                    {result === ACCEPT ? 'Accept the task' : 'Decline the task'}
-                  </h2>
-                </div>
-              </div>
+                  <div className="flex items-center space-x-3">
+                    <div
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${
+                        accepted
+                          ? 'bg-accent/25 text-primary'
+                          : 'bg-primary/20 text-primary'
+                      }`}
+                    >
+                      {accepted ? (
+                        <CheckCircle2 className="w-7 h-7 text-primary" />
+                      ) : (
+                        <XCircle className="w-7 h-7 text-primary" />
+                      )}
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-primary">
+                        Decision outcome
+                      </span>
+                      <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+                        {accepted ? 'Accept the task' : 'Decline the task'}
+                      </h2>
+                    </div>
+                  </div>
 
-              <p className="text-base sm:text-lg leading-relaxed text-text-muted pt-2 border-t border-surface-border">
-                {result === ACCEPT
-                  ? 'You have a solid reason to say yes. Confirm scope, expectations, and timing before you commit.'
-                  : "You don't have a solid reason to say yes. Decline kindly, or offer a clear counter-proposal."}
-              </p>
+                  {/* Contextual Question Explanation */}
+                  <div className="pt-3 border-t border-surface-border space-y-2">
+                    <h3 className="text-base sm:text-lg font-bold text-text-main">
+                      {explanation.title}
+                    </h3>
+                    <p className="text-sm sm:text-base leading-relaxed text-text-muted">
+                      {explanation.body}
+                    </p>
+                  </div>
 
-              <div className="pt-3">
-                <button
-                  type="button"
-                  onClick={handleRestart}
-                  className="py-3 px-6 rounded-xl bg-linear-to-r from-primary to-primary-dark hover:from-primary/90 hover:to-primary-dark/90 text-white font-bold text-sm shadow-md shadow-primary/25 flex items-center space-x-2 cursor-pointer transition-all"
-                >
-                  <RotateCcw className="w-4 h-4" />
-                  <span>Start over</span>
-                </button>
-              </div>
-            </div>
+                  {/* Useful Response Guidance */}
+                  <div className="bg-surface-base/80 border border-surface-border rounded-xl p-4 sm:p-5 space-y-2 shadow-xs">
+                    <p className="text-xs font-bold uppercase tracking-wider text-primary">
+                      A useful response
+                    </p>
+                    <p className="text-xs sm:text-sm text-text-main font-medium italic leading-relaxed">
+                      {explanation.guidance ||
+                        (accepted
+                          ? 'Before committing, confirm the scope, deadline, and what should happen to your existing priorities.'
+                          : 'You can decline respectfully, or propose a trade-off, different deadline, smaller scope, or another person who could help.')}
+                    </p>
+                  </div>
+
+                  <div className="pt-2">
+                    <button
+                      type="button"
+                      onClick={handleRestart}
+                      className="py-3 px-6 rounded-xl bg-linear-to-r from-primary to-primary-dark hover:from-primary/90 hover:to-primary-dark/90 text-white font-bold text-sm shadow-md shadow-primary/25 flex items-center space-x-2 cursor-pointer transition-all"
+                    >
+                      <RotateCcw className="w-4 h-4" />
+                      <span>Start over</span>
+                    </button>
+                  </div>
+                </div>
+              );
+            })()}
 
             {/* Answer trail */}
             {trail.length > 0 && (
               <div className="bg-surface-base border border-surface-border rounded-2xl p-5 sm:p-6 space-y-3">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-text-muted">
-                  Your Answer Trail
+                  Your answer trail
                 </h4>
                 <ul className="space-y-2 text-sm" aria-label="Your answers">
                   {trail.map((t, idx) => {
@@ -191,7 +232,7 @@ export const DecisionTreeModule: React.FC = () => {
             {/* Progress indicator */}
             <div className="space-y-2.5">
               <div className="flex justify-between items-center text-xs font-semibold tracking-wider text-text-muted">
-                <span className="text-primary font-bold">Priority Assessment</span>
+                <span className="text-primary font-bold">Priority assessment</span>
                 <span>{`Question ${q.id} of ${QUESTIONS.length}`}</span>
               </div>
               <div className="w-full bg-progress-track h-2 rounded-full overflow-hidden border border-surface-border">
@@ -251,27 +292,26 @@ export const DecisionTreeModule: React.FC = () => {
               </button>
             </div>
 
-            {/* Back button */}
+            {/* Back action */}
             {trail.length > 0 && (
-              <div className="pt-2">
-                <button
-                  type="button"
-                  onClick={handleBack}
-                  className="text-xs text-text-muted hover:text-text-main flex items-center space-x-1.5 transition-colors cursor-pointer"
-                >
-                  <ChevronRight className="w-4 h-4 rotate-180" />
-                  <span>Previous question</span>
-                </button>
-              </div>
+              <button
+                type="button"
+                onClick={handleBack}
+                className="text-xs text-text-muted hover:text-text-main flex items-center space-x-1.5 transition-colors cursor-pointer pt-2"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                <span>Back</span>
+              </button>
             )}
           </div>
         )
       ) : (
         /* Full Map View */
         <div className="space-y-4 animate-fade-in">
-          <div className="bg-surface-base border border-surface-border rounded-2xl p-4 text-xs text-text-muted flex items-center justify-between">
+          <div className="p-4 rounded-xl bg-card-bg/60 border border-surface-border text-xs text-text-muted flex items-center space-x-2">
+            <Sparkles className="w-4 h-4 text-primary shrink-0" />
             <span>
-              All 15 questions listed in strict priority order with explicit YES / NO branching paths.
+              All 15 priority criteria in decision order. Each question either routes directly to a verdict or advances to the next priority check.
             </span>
           </div>
 
@@ -279,42 +319,43 @@ export const DecisionTreeModule: React.FC = () => {
             {QUESTIONS.map((item) => (
               <li
                 key={item.id}
-                className="bg-surface-base border border-surface-border rounded-2xl p-5 space-y-3 shadow-xs"
+                className="p-5 rounded-2xl bg-surface-base border border-surface-border shadow-xs space-y-3"
               >
-                <div className="flex items-start space-x-3">
-                  <span className="w-7 h-7 rounded-lg bg-tag-bg text-primary text-xs font-bold flex items-center justify-center shrink-0 border border-tag-border">
-                    {item.id}
-                  </span>
-                  <h3 className="text-base font-bold text-text-main leading-snug">
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="text-sm sm:text-base font-bold text-text-main">
+                    <span className="text-primary mr-2 font-black">
+                      #{item.id}
+                    </span>
                     {item.text}
                   </h3>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 text-xs sm:text-sm pl-10">
-                  <div className="flex items-center space-x-2 text-text-muted">
-                    <strong className="text-primary min-w-[2.8em]">YES:</strong>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs pt-1 border-t border-surface-border/60">
+                  <div className="flex items-center space-x-2 py-1">
+                    <span className="font-extrabold text-primary">YES:</span>
                     <span
-                      className={
+                      className={`font-semibold ${
                         item.yes === ACCEPT
-                          ? 'text-primary font-semibold'
+                          ? 'text-accent'
                           : item.yes === DECLINE
-                          ? 'text-accent font-semibold'
+                          ? 'text-primary'
                           : 'text-text-muted'
-                      }
+                      }`}
                     >
                       &rarr; {OUTCOME_LABEL[item.yes]}
                     </span>
                   </div>
-                  <div className="flex items-center space-x-2 text-text-muted">
-                    <strong className="text-text-subtle min-w-[2.8em]">NO:</strong>
+
+                  <div className="flex items-center space-x-2 py-1">
+                    <span className="font-extrabold text-text-subtle">NO:</span>
                     <span
-                      className={
+                      className={`font-semibold ${
                         item.no === ACCEPT
-                          ? 'text-primary font-semibold'
+                          ? 'text-accent'
                           : item.no === DECLINE
-                          ? 'text-accent font-semibold'
+                          ? 'text-primary'
                           : 'text-text-muted'
-                      }
+                      }`}
                     >
                       &rarr; {OUTCOME_LABEL[item.no]}
                     </span>
