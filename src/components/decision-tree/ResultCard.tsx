@@ -12,7 +12,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onReset }) => {
   const IconComponent = result.icon;
 
   const copySummary = async () => {
-    const text = `The Overtime Filter Outcome: ${result.title}\n\nVerdict: ${result.description}\n\nAction Script: ${result.script}`;
+    const text = `kNOw MORE Outcome: ${result.title}\n\nVerdict: ${result.description}\n\nAction Script: ${result.script}`;
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);

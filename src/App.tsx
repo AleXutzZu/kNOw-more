@@ -1,41 +1,31 @@
-import React, { useState } from 'react';
-import { TabNavigation } from './components/common/TabNavigation';
-import { DecisionTreeModule } from './components/decision-tree/DecisionTreeModule';
-import { Footer } from './components/layout/Footer';
-import { Header } from './components/layout/Header';
-import { ScenarioRolePlayModule } from './components/scenarios/ScenarioRolePlayModule';
-import type { ActiveTab } from './types/navigation';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import RootLayout from './pages/layout';
+import LandingPage from './pages/index';
+import DecisionTreeLayout from './pages/decision-tree/layout';
+import DecisionTreePage from './pages/decision-tree/index';
+import ScenariosLayout from './pages/scenarios/layout';
+import ScenariosPage from './pages/scenarios/index';
+import NotFoundPage from './pages/404';
 
 export default function App(): React.JSX.Element {
-  const [activeTab, setActiveTab] = useState<ActiveTab>('tree');
-
   return (
-    <div className="min-h-screen bg-linear-to-br from-canvas-from via-canvas-via to-canvas-to text-text-main flex flex-col justify-between antialiased selection:bg-primary selection:text-white transition-colors duration-300">
-      {/* Header with App Name, Logo & Theme Toggle */}
-      <Header />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<RootLayout />}>
+          <Route index element={<LandingPage />} />
 
-      {/* Main Content Area */}
-      <main className="grow flex items-center justify-center p-4 sm:p-6 md:p-8">
-        <div className="w-full max-w-3xl bg-card-bg backdrop-blur-xl border border-card-border rounded-3xl shadow-xl p-6 sm:p-10 relative overflow-hidden transition-all duration-300">
-          {/* Ambient Glow Effects in Blue & Purple Shades */}
-          <div className="absolute -top-32 -right-32 w-64 h-64 bg-blue-sky/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-blue-cyan/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+          <Route path="decision-tree" element={<DecisionTreeLayout />}>
+            <Route index element={<DecisionTreePage />} />
+          </Route>
 
-          {/* Navigation Tabs */}
-          <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
+          <Route path="scenarios" element={<ScenariosLayout />}>
+            <Route index element={<ScenariosPage />} />
+          </Route>
 
-          {/* Render Active View */}
-          {activeTab === 'tree' ? (
-            <DecisionTreeModule />
-          ) : (
-            <ScenarioRolePlayModule />
-          )}
-        </div>
-      </main>
-
-      {/* Footer */}
-      <Footer />
-    </div>
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
