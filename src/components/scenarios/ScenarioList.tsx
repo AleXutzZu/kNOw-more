@@ -27,16 +27,16 @@ export const ScenarioList: React.FC<ScenarioListProps> = ({
           <div
             key={scenario.id}
             onClick={() => onSelectScenario(scenario)}
-            className="group p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-accent/50 hover:bg-white/10 transition-all cursor-pointer flex items-center justify-between shadow-sm"
+            className="group p-5 rounded-2xl bg-bg-surface/50 border border-blue-sky/20 hover:border-accent hover:bg-bg-surface/80 transition-all cursor-pointer flex items-center justify-between shadow-sm"
           >
-            <div className="space-y-1 pr-4">
-              <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary/25 text-accent border border-primary/40">
+            <div className="space-y-1.5 pr-4">
+              <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-primary/25 text-white border border-primary/40">
                 {scenario.category}
               </span>
               <h3 className="text-lg font-bold text-white group-hover:text-accent transition-colors">
                 {scenario.title}
               </h3>
-              <p className="text-xs text-white/60 line-clamp-2">
+              <p className="text-xs text-blue-sky/80 line-clamp-2">
                 {scenario.situation}
               </p>
             </div>

@@ -8,16 +8,26 @@
   --color-brand-purple: #9448bc;
   --color-brand-plum: #480355;
 
-  /* Semantic Theme Configuration */
+  /* Blue Background System (derived from #7699D4, #63B4D1, #90FCF9) */
+  --color-bg-deep: #0c1626;
+  --color-bg-dark: #12213a;
+  --color-bg-surface: #182e50;
+  --color-bg-card: #14243f;
+  --color-bg-subtle: #243d66;
+
+  /* Palette Named Roles */
+  --color-blue-cyan: #90fcf9;
+  --color-blue-sky: #63b4d1;
+  --color-blue-periwinkle: #7699d4;
+  --color-purple-vibrant: #9448bc;
+  --color-purple-plum: #480355;
+
+  /* Semantic Theme Mappings */
   --color-primary: #9448bc;
-  --color-secondary: #7699d4;
+  --color-primary-dark: #480355;
   --color-accent: #90fcf9;
   --color-highlight: #63b4d1;
-  --color-dark: #480355;
-
-  /* Extended Surface Helpers */
-  --color-dark-deep: #1e0123;
-  --color-dark-surface: #2f0237;
+  --color-secondary: #7699d4;
 }
 
 @layer utilities {

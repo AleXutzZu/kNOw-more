@@ -43,7 +43,7 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onReset }) => {
       </div>
 
       {/* Outcome Card */}
-      <div className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 space-y-4">
+      <div className="bg-bg-surface/50 border border-blue-sky/20 rounded-2xl p-6 sm:p-8 space-y-4">
         <h4 className="text-sm font-semibold text-accent uppercase tracking-wider">
           Strategic Verdict
         </h4>
@@ -51,11 +51,11 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onReset }) => {
           {result.description}
         </p>
 
-        <div className="pt-4 border-t border-white/10">
-          <h5 className="text-xs font-bold text-white/60 uppercase tracking-wider mb-2">
+        <div className="pt-4 border-t border-blue-sky/20">
+          <h5 className="text-xs font-bold text-blue-sky uppercase tracking-wider mb-2">
             Recommended Action Script / Next Step:
           </h5>
-          <div className="p-4 rounded-xl bg-dark/80 border border-white/10 text-highlight/95 text-sm italic">
+          <div className="p-4 rounded-xl bg-bg-deep/80 border border-blue-sky/30 text-accent text-sm italic">
             {result.script}
           </div>
         </div>
@@ -66,17 +66,17 @@ export const ResultCard: React.FC<ResultCardProps> = ({ result, onReset }) => {
         <button
           type="button"
           onClick={onReset}
-          className="flex-1 py-4 px-6 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-sm transition-all border border-white/10 flex items-center justify-center space-x-2 cursor-pointer"
+          className="flex-1 py-4 px-6 rounded-xl bg-bg-surface/80 hover:bg-bg-surface text-white font-bold text-sm transition-all border border-blue-sky/30 flex items-center justify-center space-x-2 cursor-pointer"
         >
-          <RotateCcw className="w-4 h-4" />
+          <RotateCcw className="w-4 h-4 text-blue-sky" />
           <span>Evaluate Another Request</span>
         </button>
         <button
           type="button"
           onClick={copySummary}
-          className="flex-1 py-4 px-6 rounded-xl bg-linear-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white font-bold text-sm shadow-lg shadow-primary/25 transition-all flex items-center justify-center space-x-2 cursor-pointer"
+          className="flex-1 py-4 px-6 rounded-xl bg-linear-to-r from-primary to-primary-dark hover:from-primary/90 hover:to-primary-dark/90 text-white font-bold text-sm shadow-lg shadow-primary/30 transition-all flex items-center justify-center space-x-2 cursor-pointer"
         >
-          {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+          {copied ? <Check className="w-4 h-4 text-accent" /> : <Copy className="w-4 h-4" />}
           <span>{copied ? 'Copied to Clipboard!' : 'Copy Action Plan'}</span>
         </button>
       </div>

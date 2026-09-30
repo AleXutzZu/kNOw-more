@@ -29,7 +29,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           <span>{question.phase}</span>
           <span className="text-white/70">{`Step ${stepIndex + 1} of ${totalSteps}`}</span>
         </div>
-        <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+        <div className="w-full bg-bg-surface/80 h-2.5 rounded-full overflow-hidden border border-blue-sky/20">
           <div
             className="bg-linear-to-r from-primary via-secondary to-accent h-full transition-all duration-500 rounded-full"
             style={{ width: `${progressPercent}%` }}
@@ -38,14 +38,14 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       </div>
 
       {/* Question Card */}
-      <div className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 space-y-6 shadow-inner">
-        <div className="inline-block px-3 py-1 rounded-full bg-white/10 text-highlight text-xs font-semibold">
+      <div className="bg-bg-surface/50 border border-blue-sky/20 rounded-2xl p-6 sm:p-8 space-y-6 shadow-inner">
+        <div className="inline-block px-3 py-1 rounded-full bg-bg-subtle text-accent text-xs font-semibold border border-blue-sky/30">
           {question.tag}
         </div>
         <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug">
           {question.text}
         </h3>
-        <p className="text-sm text-white/70 italic">{question.context}</p>
+        <p className="text-sm text-blue-sky/90 italic">{question.context}</p>
       </div>
 
       {/* Yes / No Action Buttons */}
@@ -53,9 +53,9 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         <button
           type="button"
           onClick={() => onAnswer(false)}
-          className="group flex items-center justify-center space-x-3 p-4 rounded-xl border border-white/10 bg-dark/60 hover:bg-dark hover:border-secondary/60 text-white font-bold transition-all shadow-sm cursor-pointer"
+          className="group flex items-center justify-center space-x-3 p-4 rounded-xl border border-white/10 bg-bg-surface/80 hover:bg-bg-surface hover:border-blue-sky text-white font-bold transition-all shadow-sm cursor-pointer"
         >
-          <span className="w-8 h-8 rounded-lg bg-white/10 group-hover:bg-primary/30 text-white/70 group-hover:text-accent flex items-center justify-center transition-colors">
+          <span className="w-8 h-8 rounded-lg bg-white/10 group-hover:bg-blue-sky/25 text-white/80 group-hover:text-accent flex items-center justify-center transition-colors text-xs font-bold">
             NO
           </span>
           <span className="text-base">No</span>
@@ -63,9 +63,9 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         <button
           type="button"
           onClick={() => onAnswer(true)}
-          className="group flex items-center justify-center space-x-3 p-4 rounded-xl border border-primary/40 hover:border-accent bg-linear-to-r from-primary/30 to-secondary/30 hover:from-primary/50 hover:to-secondary/50 text-white font-bold transition-all shadow-sm cursor-pointer"
+          className="group flex items-center justify-center space-x-3 p-4 rounded-xl border border-primary/50 hover:border-accent bg-linear-to-r from-primary/30 to-primary-dark/30 hover:from-primary/50 hover:to-primary-dark/50 text-white font-bold transition-all shadow-sm cursor-pointer"
         >
-          <span className="w-8 h-8 rounded-lg bg-primary/40 group-hover:bg-primary text-accent group-hover:text-white flex items-center justify-center transition-colors">
+          <span className="w-8 h-8 rounded-lg bg-primary group-hover:bg-primary/80 text-white flex items-center justify-center transition-colors text-xs font-bold">
             YES
           </span>
           <span className="text-base">Yes</span>
