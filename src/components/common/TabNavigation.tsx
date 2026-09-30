@@ -16,10 +16,10 @@ export const TabNavigation: React.FC<TabNavigationProps> = ({
       <button
         type="button"
         onClick={() => onTabChange('tree')}
-        className={`flex-1 py-3 px-4 rounded-xl font-bold text-xs sm:text-sm transition-all text-center flex items-center justify-center space-x-2 ${
+        className={`flex-1 py-3 px-4 rounded-xl font-bold text-xs sm:text-sm transition-all text-center flex items-center justify-center space-x-2 cursor-pointer ${
           activeTab === 'tree'
-            ? 'bg-linear-to-r from-rose-500 to-amber-500 text-white shadow-lg'
-            : 'text-slate-400 hover:text-white'
+            ? 'bg-linear-to-r from-primary to-secondary text-white shadow-lg shadow-primary/30'
+            : 'text-white/60 hover:text-white hover:bg-white/5'
         }`}
       >
         <GitBranch className="w-4 h-4" />
@@ -28,10 +28,10 @@ export const TabNavigation: React.FC<TabNavigationProps> = ({
       <button
         type="button"
         onClick={() => onTabChange('scenarios')}
-        className={`flex-1 py-3 px-4 rounded-xl font-bold text-xs sm:text-sm transition-all text-center flex items-center justify-center space-x-2 ${
+        className={`flex-1 py-3 px-4 rounded-xl font-bold text-xs sm:text-sm transition-all text-center flex items-center justify-center space-x-2 cursor-pointer ${
           activeTab === 'scenarios'
-            ? 'bg-linear-to-r from-rose-500 to-amber-500 text-white shadow-lg'
-            : 'text-slate-400 hover:text-white'
+            ? 'bg-linear-to-r from-primary to-secondary text-white shadow-lg shadow-primary/30'
+            : 'text-white/60 hover:text-white hover:bg-white/5'
         }`}
       >
         <Users className="w-4 h-4" />
