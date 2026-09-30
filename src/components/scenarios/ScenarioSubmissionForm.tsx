@@ -9,7 +9,7 @@ export const ScenarioSubmissionForm: React.FC<ScenarioSubmissionFormProps> = ({
   onSubmitted,
 }) => {
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('Office Housework & Culture');
+  const [category, setCategory] = useState('Office housework');
   const [situation, setSituation] = useState('');
   const [context, setContext] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -38,24 +38,25 @@ export const ScenarioSubmissionForm: React.FC<ScenarioSubmissionFormProps> = ({
 
   const handleReset = () => {
     setTitle('');
-    setCategory('Office Housework & Culture');
+    setCategory('Office housework');
     setSituation('');
     setContext('');
     setSubmitted(false);
   };
 
   return (
-    <div className="bg-surface-base border border-surface-border rounded-2xl p-6 sm:p-8 space-y-6 mt-8 transition-colors">
-      <div className="flex items-center space-x-3">
-        <div className="w-10 h-10 rounded-xl bg-tag-bg text-primary flex items-center justify-center shrink-0 border border-tag-border">
-          <MessageSquarePlus className="w-5 h-5" />
-        </div>
-        <div>
-          <h3 className="text-lg font-bold text-text-main">
-            Submit a Real-Life Scenario
+    <div className="bg-surface-base border border-surface-border rounded-2xl p-6 sm:p-8 mt-12 space-y-6 shadow-sm">
+      <div className="flex items-start justify-between">
+        <div className="space-y-1">
+          <div className="flex items-center space-x-2 text-primary font-bold text-sm tracking-wide uppercase">
+            <MessageSquarePlus className="w-4 h-4" />
+            <span>Community contributions</span>
+          </div>
+          <h3 className="text-xl sm:text-2xl font-extrabold text-text-main">
+            Submit a real workplace dilemma
           </h3>
-          <p className="text-xs text-text-muted">
-            Experienced an awkward boundary test or invisible task at work? Share it to help our development team craft new scenarios!
+          <p className="text-xs sm:text-sm text-text-muted max-w-xl">
+            Have you faced an unfair or ambiguous task request? Share it anonymously with our developers to help us add new scenarios.
           </p>
         </div>
       </div>
@@ -74,7 +75,7 @@ export const ScenarioSubmissionForm: React.FC<ScenarioSubmissionFormProps> = ({
             onClick={handleReset}
             className="px-4 py-2 rounded-xl bg-surface-base hover:bg-surface-hover text-text-main font-semibold text-xs border border-surface-border transition-colors cursor-pointer"
           >
-            Submit Another Scenario
+            Submit another scenario
           </button>
         </div>
       ) : (
@@ -84,7 +85,7 @@ export const ScenarioSubmissionForm: React.FC<ScenarioSubmissionFormProps> = ({
               htmlFor="scenario-title"
               className="block text-xs font-bold text-text-main uppercase tracking-wider mb-1.5"
             >
-              Scenario Title *
+              Scenario title *
             </label>
             <input
               id="scenario-title"
@@ -110,12 +111,10 @@ export const ScenarioSubmissionForm: React.FC<ScenarioSubmissionFormProps> = ({
               onChange={(e) => setCategory(e.target.value)}
               className="w-full px-4 py-2.5 rounded-xl border border-btn-neutral-border bg-btn-neutral-bg text-text-main text-sm focus:outline-hidden focus:border-primary transition-colors"
             >
-              <option value="Office Housework & Culture">Office Housework &amp; Culture</option>
-              <option value="Meeting Dynamics & Authority">Meeting Dynamics &amp; Authority</option>
-              <option value="Scope Creep & Overtime">Scope Creep &amp; Overtime</option>
-              <option value="Mentorship & Onboarding Load">Mentorship &amp; Onboarding Load</option>
-              <option value="People-Pleasing & Imposter Syndrome">People-Pleasing &amp; Imposter Syndrome</option>
-              <option value="Other">Other Workplace Dilemma</option>
+              <option value="Office housework">Office housework</option>
+              <option value="Workload & deadlines">Workload &amp; deadlines</option>
+              <option value="Growth & opportunities">Growth &amp; opportunities</option>
+              <option value="Other workplace dilemma">Other workplace dilemma</option>
             </select>
           </div>
 
@@ -124,7 +123,7 @@ export const ScenarioSubmissionForm: React.FC<ScenarioSubmissionFormProps> = ({
               htmlFor="scenario-situation"
               className="block text-xs font-bold text-text-main uppercase tracking-wider mb-1.5"
             >
-              What Happened? (The Situation) *
+              The situation &amp; request *
             </label>
             <textarea
               id="scenario-situation"
@@ -132,7 +131,7 @@ export const ScenarioSubmissionForm: React.FC<ScenarioSubmissionFormProps> = ({
               rows={3}
               value={situation}
               onChange={(e) => setSituation(e.target.value)}
-              placeholder="Describe how the request was made, who asked, and what expectations were set..."
+              placeholder="Describe what was asked, by whom, and what the expectations were..."
               className="w-full px-4 py-2.5 rounded-xl border border-btn-neutral-border bg-btn-neutral-bg text-text-main placeholder-text-subtle text-sm focus:outline-hidden focus:border-primary transition-colors resize-none"
             />
           </div>
@@ -142,25 +141,27 @@ export const ScenarioSubmissionForm: React.FC<ScenarioSubmissionFormProps> = ({
               htmlFor="scenario-context"
               className="block text-xs font-bold text-text-main uppercase tracking-wider mb-1.5"
             >
-              How did you feel / How was it handled? (Optional)
+              Outcome or personal reflection (Optional)
             </label>
-            <input
+            <textarea
               id="scenario-context"
-              type="text"
+              rows={2}
               value={context}
               onChange={(e) => setContext(e.target.value)}
-              placeholder="e.g., Felt pressured to say yes immediately, or tried to deflect with humor..."
-              className="w-full px-4 py-2.5 rounded-xl border border-btn-neutral-border bg-btn-neutral-bg text-text-main placeholder-text-subtle text-sm focus:outline-hidden focus:border-primary transition-colors"
+              placeholder="How did you respond? What was the career or psychological consequence?"
+              className="w-full px-4 py-2.5 rounded-xl border border-btn-neutral-border bg-btn-neutral-bg text-text-main placeholder-text-subtle text-sm focus:outline-hidden focus:border-primary transition-colors resize-none"
             />
           </div>
 
-          <button
-            type="submit"
-            className="w-full py-3 px-5 rounded-xl bg-linear-to-r from-primary to-primary-dark hover:from-primary/90 hover:to-primary-dark/90 text-white font-bold text-sm shadow-md shadow-primary/25 transition-all flex items-center justify-center space-x-2 cursor-pointer"
-          >
-            <Send className="w-4 h-4 text-white" />
-            <span>Send Scenario to Development Team</span>
-          </button>
+          <div className="pt-2 flex justify-end">
+            <button
+              type="submit"
+              className="px-6 py-2.5 rounded-xl bg-linear-to-r from-primary to-primary-dark hover:from-primary/90 hover:to-primary-dark/90 text-white font-bold text-xs sm:text-sm shadow-md shadow-primary/25 transition-all flex items-center space-x-2 cursor-pointer"
+            >
+              <span>Submit scenario</span>
+              <Send className="w-4 h-4" />
+            </button>
+          </div>
         </form>
       )}
     </div>

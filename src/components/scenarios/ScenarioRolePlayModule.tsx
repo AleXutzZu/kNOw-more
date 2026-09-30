@@ -94,7 +94,7 @@ export const ScenarioRolePlayModule: React.FC = () => {
             Workplace scenarios
           </h1>
           <p className="text-xs sm:text-sm text-text-muted">
-            Realistic workplace situations to practice strategic boundary responses and avoid burnout.
+            Realistic workplace situations to practice responses and avoid burnout.
           </p>
         </div>
 

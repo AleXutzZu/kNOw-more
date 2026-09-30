@@ -3,7 +3,7 @@ import type { Scenario } from '../types/scenario';
 export const SCENARIOS: Scenario[] = [
   {
     id: 1,
-    category: 'Office Housework & Culture',
+    category: 'Office housework',
     title: 'The Holiday Party & Culture Committee Request',
     context:
       'You are an early-career contributor known for being organized and reliable. Your manager pulls you aside during your 1:1 sync.',
@@ -57,7 +57,7 @@ export const SCENARIOS: Scenario[] = [
 
   {
     id: 2,
-    category: 'Meeting Dynamics & Expertise',
+    category: 'Office housework',
     title: 'Taking Notes in a Technical Strategy Meeting',
     context:
       'You are the senior technical expert in a high-stakes strategy meeting with stakeholders and clients.',
@@ -111,7 +111,7 @@ export const SCENARIOS: Scenario[] = [
 
   {
     id: 3,
-    category: 'Scope Creep & Overtime',
+    category: 'Workload & deadlines',
     title: 'The Uncompensated Project Extension',
     context:
       'Your project lead approaches you late Friday afternoon before a busy sprint deadline.',
@@ -165,7 +165,7 @@ export const SCENARIOS: Scenario[] = [
 
   {
     id: 4,
-    category: 'Mentorship & Invisible Workload',
+    category: 'Office housework',
     title: 'The Default Onboarding Mentor',
     context:
       'Your department hires three new employees at once. In a team standup, leadership announces new assignments.',
@@ -219,7 +219,7 @@ export const SCENARIOS: Scenario[] = [
 
   {
     id: 5,
-    category: 'Engineering & Deadlines',
+    category: 'Workload & deadlines',
     title: 'The Benchmark Deadline',
     context:
       'You are a junior research engineer working on an ML systems project. A colleague asks you to run the team\'s full benchmark suite tonight and prepare plots for tomorrow morning\'s lab meeting.',
@@ -273,7 +273,7 @@ export const SCENARIOS: Scenario[] = [
 
   {
     id: 6,
-    category: 'Career Growth & Research Opportunity',
+    category: 'Growth & opportunities',
     title: 'The Research Opportunity',
     context:
       'Your research supervisor approaches you about reproducing results from an important baseline paper and extending the experiment to your team\'s dataset.',
@@ -327,7 +327,7 @@ export const SCENARIOS: Scenario[] = [
 
   {
     id: 7,
-    category: 'Office Housework & Routine Admin',
+    category: 'Office housework',
     title: 'The Weekly Office Housework',
     context:
       'You are a junior software researcher on a team of six people. A senior teammate asks you to organize the team\'s weekly research meeting again.',

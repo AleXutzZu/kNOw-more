@@ -8,7 +8,6 @@ import {
   Maximize2,
   Minimize2,
   RotateCcw,
-  Sparkles,
   ZoomIn,
   ZoomOut,
 } from 'lucide-react';
@@ -45,15 +44,11 @@ export const RoadmapPage: React.FC = () => {
       {/* Header bar */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-2 border-b border-surface-border">
         <div className="space-y-1">
-          <div className="inline-flex items-center space-x-1.5 px-3 py-0.5 rounded-full bg-tag-bg text-primary text-xs font-bold border border-tag-border">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Cost-effective solution</span>
-          </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-text-main tracking-tight">
             Decision roadmap guide
           </h1>
           <p className="text-xs sm:text-sm text-text-muted">
-            High-resolution visual blueprint for fast, offline boundary decisions without expensive coaching.
+            High-resolution visual blueprint for fast, offline decisions.
           </p>
         </div>
 
@@ -108,7 +103,7 @@ export const RoadmapPage: React.FC = () => {
         </div>
         <div className="flex items-center space-x-3 text-primary font-semibold shrink-0">
           <Link to="/decision-tree" className="hover:underline flex items-center space-x-1">
-            <span>Try interactive version</span>
+            <span>Try the interactive decision tree</span>
             <ExternalLink className="w-3.5 h-3.5" />
           </Link>
         </div>
