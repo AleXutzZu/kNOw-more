@@ -1,27 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#12213a" />
+      <stop offset="0%" stop-color="#0c1626" />
       <stop offset="50%" stop-color="#182e50" />
-      <stop offset="100%" stop-color="#0c1626" />
+      <stop offset="100%" stop-color="#12213a" />
     </linearGradient>
     <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#63b4d1" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#9448bc" stop-opacity="0.2" />
+      <stop offset="0%" stop-color="#63b4d1" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#9448bc" stop-opacity="0.25" />
     </linearGradient>
-    <linearGradient id="avatarGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#90fcf9" />
       <stop offset="100%" stop-color="#63b4d1" />
     </linearGradient>
-    <linearGradient id="avatarGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#9448bc" />
-      <stop offset="100%" stop-color="#480355" />
-    </linearGradient>
-    <linearGradient id="avatarGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#7699d4" />
       <stop offset="100%" stop-color="#63b4d1" />
     </linearGradient>
-    <linearGradient id="avatarGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9448bc" />
+      <stop offset="100%" stop-color="#480355" />
+    </linearGradient>
+    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#90fcf9" />
       <stop offset="100%" stop-color="#9448bc" />
     </linearGradient>
@@ -30,59 +30,71 @@
   <!-- Background -->
   <rect width="1200" height="675" rx="24" fill="url(#bgGrad)"/>
   
-  <!-- Subtle Grid Lines / Pattern -->
-  <g opacity="0.15" stroke="#63b4d1" stroke-width="1">
-    <line x1="100" y1="0" x2="100" y2="675"/>
+  <!-- Subtle Grid Lines / Tech Pattern -->
+  <g opacity="0.12" stroke="#63b4d1" stroke-width="1">
+    <line x1="120" y1="0" x2="120" y2="675"/>
     <line x1="300" y1="0" x2="300" y2="675"/>
-    <line x1="500" y1="0" x2="500" y2="675"/>
-    <line x1="700" y1="0" x2="700" y2="675"/>
-    <line x1="900" y1="0" x2="900" y2="675"/>
-    <line x1="1100" y1="0" x2="1100" y2="675"/>
-    <line x1="0" y1="150" x2="1200" y2="150"/>
-    <line x1="0" y1="350" x2="1200" y2="350"/>
-    <line x1="0" y1="550" x2="1200" y2="550"/>
+    <line x1="480" y1="0" x2="480" y2="675"/>
+    <line x1="660" y1="0" x2="660" y2="675"/>
+    <line x1="840" y1="0" x2="840" y2="675"/>
+    <line x1="1020" y1="0" x2="1020" y2="675"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
   </g>
 
   <!-- Central Glow -->
-  <circle cx="600" cy="300" r="280" fill="#63b4d1" opacity="0.12" filter="blur(60px)"/>
-  <circle cx="600" cy="320" r="180" fill="#9448bc" opacity="0.15" filter="blur(50px)"/>
+  <circle cx="600" cy="260" r="300" fill="#63b4d1" opacity="0.1" filter="blur(60px)"/>
+  <circle cx="600" cy="290" r="200" fill="#9448bc" opacity="0.15" filter="blur(50px)"/>
 
-  <!-- Stylized Team Figures -->
-  <!-- Person 1 (Left) -->
-  <g transform="translate(240, 210)">
-    <circle cx="60" cy="45" r="42" fill="url(#avatarGrad1)" opacity="0.9"/>
-    <path d="M 0 170 C 0 110, 120 110, 120 170 Z" fill="url(#avatarGrad3)" opacity="0.85"/>
+  <!-- 6 Computer Science Graduates Figures -->
+  <!-- Person 1 -->
+  <g transform="translate(130, 200)">
+    <circle cx="50" cy="40" r="34" fill="url(#g1)"/>
+    <path d="M 5 150 C 5 95, 95 95, 95 150 Z" fill="url(#g2)" opacity="0.9"/>
   </g>
 
-  <!-- Person 2 (Center-Left) -->
-  <g transform="translate(420, 175)">
-    <circle cx="70" cy="50" r="48" fill="url(#avatarGrad4)" opacity="0.95"/>
-    <path d="M 0 200 C 0 130, 140 130, 140 200 Z" fill="url(#avatarGrad2)" opacity="0.9"/>
+  <!-- Person 2 -->
+  <g transform="translate(290, 175)">
+    <circle cx="55" cy="45" r="38" fill="url(#g4)"/>
+    <path d="M 5 165 C 5 105, 105 105, 105 165 Z" fill="url(#g3)" opacity="0.9"/>
   </g>
 
-  <!-- Person 3 (Center-Right) -->
-  <g transform="translate(640, 175)">
-    <circle cx="70" cy="50" r="48" fill="url(#avatarGrad1)" opacity="0.95"/>
-    <path d="M 0 200 C 0 130, 140 130, 140 200 Z" fill="url(#avatarGrad3)" opacity="0.9"/>
+  <!-- Person 3 -->
+  <g transform="translate(470, 160)">
+    <circle cx="60" cy="48" r="42" fill="url(#g1)"/>
+    <path d="M 5 180 C 5 110, 115 110, 115 180 Z" fill="url(#g2)" opacity="0.95"/>
   </g>
 
-  <!-- Person 4 (Right) -->
-  <g transform="translate(840, 210)">
-    <circle cx="60" cy="45" r="42" fill="url(#avatarGrad2)" opacity="0.9"/>
-    <path d="M 0 170 C 0 110, 120 110, 120 170 Z" fill="url(#avatarGrad4)" opacity="0.85"/>
+  <!-- Person 4 -->
+  <g transform="translate(630, 160)">
+    <circle cx="60" cy="48" r="42" fill="url(#g4)"/>
+    <path d="M 5 180 C 5 110, 115 110, 115 180 Z" fill="url(#g3)" opacity="0.95"/>
+  </g>
+
+  <!-- Person 5 -->
+  <g transform="translate(810, 175)">
+    <circle cx="55" cy="45" r="38" fill="url(#g1)"/>
+    <path d="M 5 165 C 5 105, 105 105, 105 165 Z" fill="url(#g2)" opacity="0.9"/>
+  </g>
+
+  <!-- Person 6 -->
+  <g transform="translate(970, 200)">
+    <circle cx="50" cy="40" r="34" fill="url(#g4)"/>
+    <path d="M 5 150 C 5 95, 95 95, 95 150 Z" fill="url(#g3)" opacity="0.9"/>
   </g>
 
   <!-- Card Overlay / Frame -->
-  <rect x="180" y="440" width="840" height="150" rx="20" fill="url(#cardGrad)" stroke="#63b4d1" stroke-width="1.5" stroke-opacity="0.4"/>
+  <rect x="150" y="450" width="900" height="155" rx="20" fill="url(#cardGrad)" stroke="#63b4d1" stroke-width="1.5" stroke-opacity="0.35"/>
 
   <!-- Text -->
-  <text x="600" y="500" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="1">
-    kNOw MORE Team
+  <text x="600" y="500" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1">
+    6 Computer Science Graduates
   </text>
-  <text x="600" y="540" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="500" fill="#90fcf9" text-anchor="middle" letter-spacing="0.5">
-    Empowering women with strategic boundary clarity &amp; career agency
+  <text x="600" y="538" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#90fcf9" text-anchor="middle" letter-spacing="0.5">
+    Inspired by womENcourage 2026 • Nice, France
   </text>
-  <text x="600" y="568" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#63b4d1" text-anchor="middle" opacity="0.8">
-    [ Sample Group Photo Placeholder • To be replaced with photo ]
+  <text x="600" y="572" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="400" fill="#63b4d1" text-anchor="middle" opacity="0.9">
+    Building software tools for workplace equality and healthy boundary defense
   </text>
 </svg>

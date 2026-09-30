@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import type { Scenario } from '../../types/scenario';
+import { ScenarioSubmissionForm } from './ScenarioSubmissionForm';
 
 interface ScenarioListProps {
   scenarios: Scenario[];
@@ -46,6 +47,9 @@ export const ScenarioList: React.FC<ScenarioListProps> = ({
           </div>
         ))}
       </div>
+
+      {/* Scenario Submission Form for Community / Users */}
+      <ScenarioSubmissionForm />
     </div>
   );
 };

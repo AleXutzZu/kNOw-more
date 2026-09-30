@@ -1,6 +1,5 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { TabNavigation } from '../../components/common/TabNavigation';
 
 export const ScenariosLayout: React.FC = () => {
   return (
@@ -11,7 +10,6 @@ export const ScenariosLayout: React.FC = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10">
-        <TabNavigation />
         <Outlet />
       </div>
     </div>

@@ -86,7 +86,7 @@ export const QUESTIONS: Record<string, QuestionNode> = {
     onNo: 'result_practice_no',
   },
   q4_capacity: {
-    phase: 'Phase 4: Sustainable Capacity & ROI',
+    phase: 'Phase 4: Sustainable Capacity & Career Value',
     tag: 'Baseline Burnout',
     text: 'Does your current workload already include regular after-hours or weekend work to maintain baseline standards?',
     context: 'Absolute capacity boundary check.',
@@ -94,10 +94,10 @@ export const QUESTIONS: Record<string, QuestionNode> = {
     onNo: 'q4_promotion',
   },
   q4_promotion: {
-    phase: 'Phase 4: Sustainable Capacity & ROI',
-    tag: 'Career ROI',
+    phase: 'Phase 4: Sustainable Capacity & Career Value',
+    tag: 'Career Growth',
     text: 'Does taking this on have a direct, documented link to your next formal promotion cycle within the next 12 months?',
-    context: 'Ensuring clear career return on investment.',
+    context: 'Ensuring clear career reward and advancement benefit.',
     onYes: 'result_strategic_accept',
     onNo: 'result_timebox_offer',
   },
@@ -174,7 +174,7 @@ export const RESULTS: Record<string, ResultNode> = {
     phase: 'Phase 4 Verdict',
     title: 'Strategic Go with Documentation',
     description:
-      'All conditions are met: clear career ROI, capacity confirmed, and high impact. Take on the work, but ensure the agreement and expectations are locked in writing with your manager.',
+      'All conditions are met: clear career growth value, capacity confirmed, and high impact. Take on the work, but ensure the agreement and expectations are locked in writing with your manager.',
     script:
       '"I\'m aligned on taking this on as discussed. I\'ll document our trade-offs and send a recap so we are aligned on success metrics for my upcoming review cycle."',
     tagColor: 'bg-blue-cyan/25 text-text-main border border-blue-cyan/40',
@@ -185,7 +185,7 @@ export const RESULTS: Record<string, ResultNode> = {
     phase: 'Phase 4 Verdict',
     title: 'Counter-Offer with Time-Boxed Contribution',
     description:
-      'This is moderately useful but lacks direct promotion ROI. Do not take on full ownership; offer a minimal, time-boxed contribution instead.',
+      'This is moderately useful but lacks direct promotion benefit. Do not take on full ownership; offer a minimal, time-boxed contribution instead.',
     script:
       '"I can spend a maximum of 2 hours this week consulting on this, but I cannot own the deliverable. Let me know if that support helps!"',
     tagColor: 'bg-blue-sky/20 text-text-main border border-blue-sky/40',

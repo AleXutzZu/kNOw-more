@@ -6,7 +6,7 @@ import DecisionTreeLayout from './pages/decision-tree/layout';
 import DecisionTreePage from './pages/decision-tree/index';
 import ScenariosLayout from './pages/scenarios/layout';
 import ScenariosPage from './pages/scenarios/index';
-import NotFoundPage from './pages/404';
+import NotFoundPage from './pages/not_found.tsx';
 
 export default function App(): React.JSX.Element {
   return (

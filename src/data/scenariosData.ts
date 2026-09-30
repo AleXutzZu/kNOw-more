@@ -200,8 +200,8 @@ export const SCENARIOS: Scenario[] = [
         id: 'c',
         label: 'C',
         text: 'Ask for this leadership contribution to be formally documented for your promotion packet.',
-        strategyType: 'Leveraging Leadership ROI',
-        title: 'Converting Housework to Career ROI',
+        strategyType: 'Leveraging Leadership Recognition',
+        title: 'Converting Housework to Career Recognition',
         feedback:
           'If you must take on citizenship work, ensure it directly counts toward your leadership evaluation and promotion criteria.',
         script:

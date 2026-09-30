@@ -12,7 +12,7 @@ export const WelcomeCard: React.FC<WelcomeCardProps> = ({ onStart }) => {
         Should You Take On That Extra Work?
       </h2>
       <p className="text-text-muted text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
-        Navigate invisible labor, office housework, psychological traps, and strategic ROI with this advanced decision engine designed to protect your bandwidth and career trajectory.
+        Navigate invisible labor, office housework, people-pleasing pressures, and career value with this advanced decision engine designed to protect your bandwidth and career growth.
       </p>
       <div className="pt-4">
         <button
