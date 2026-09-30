@@ -1,5 +1,25 @@
 @import "tailwindcss";
 
+@theme {
+  /* 5 Core Palette Hex Codes */
+  --color-brand-cyan: #90fcf9;
+  --color-brand-sky: #63b4d1;
+  --color-brand-periwinkle: #7699d4;
+  --color-brand-purple: #9448bc;
+  --color-brand-plum: #480355;
+
+  /* Semantic Theme Configuration */
+  --color-primary: #9448bc;
+  --color-secondary: #7699d4;
+  --color-accent: #90fcf9;
+  --color-highlight: #63b4d1;
+  --color-dark: #480355;
+
+  /* Extended Surface Helpers */
+  --color-dark-deep: #1e0123;
+  --color-dark-surface: #2f0237;
+}
+
 @layer utilities {
   @keyframes fadeIn {
     from {
