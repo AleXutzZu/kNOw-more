@@ -25,7 +25,7 @@ export const SCENARIOS: Scenario[] = [
           'This choice traps you in uncompensated administrative labor that does not factor into performance reviews or promotions, while taking time away from core revenue-generating projects.',
         script:
           '"Sure, I can take that on!" (Leads to 15+ hours of uncredited event coordination on top of regular work).',
-        tagColor: 'bg-primary/25 text-accent border border-primary/40',
+        tagColor: 'bg-primary/25 text-white border border-primary/40',
         badgeBg: 'bg-primary text-white',
         icon: AlertTriangle,
       },
@@ -54,7 +54,7 @@ export const SCENARIOS: Scenario[] = [
         script:
           '"I appreciate you thinking of me! Given my focus on [Project], I can\'t lead this. Since culture committee work benefits everyone, could we establish a rotating team schedule or hire event support?"',
         tagColor: 'bg-accent/20 text-accent border border-accent/40',
-        badgeBg: 'bg-accent text-dark',
+        badgeBg: 'bg-accent text-bg-deep',
         icon: CheckCircle2,
       },
     ],
@@ -76,7 +76,7 @@ export const SCENARIOS: Scenario[] = [
           'Stepping into the secretarial role when you are a senior technical contributor diminishes your perceived authority in front of clients and stakeholders.',
         script:
           '"Sure, no problem." (Takes notes, acting as scribe while peers lead the strategic discussion).',
-        tagColor: 'bg-primary/25 text-accent border border-primary/40',
+        tagColor: 'bg-primary/25 text-white border border-primary/40',
         badgeBg: 'bg-primary text-white',
         icon: AlertTriangle,
       },
@@ -91,7 +91,7 @@ export const SCENARIOS: Scenario[] = [
         script:
           '"Let\'s rotate meeting note-taking so everyone can stay fully engaged in the strategy discussion. Who wants to take notes today?"',
         tagColor: 'bg-accent/20 text-accent border border-accent/40',
-        badgeBg: 'bg-accent text-dark',
+        badgeBg: 'bg-accent text-bg-deep',
         icon: CheckCircle2,
       },
       {
@@ -104,8 +104,8 @@ export const SCENARIOS: Scenario[] = [
           'By bypassing the distraction and immediately diving into high-level content, you re-anchor your role as an expert speaker.',
         script:
           '(Begins slide presentation directly on technical metrics without commenting on note-taking).',
-        tagColor: 'bg-highlight/20 text-highlight border border-highlight/30',
-        badgeBg: 'bg-highlight text-dark',
+        tagColor: 'bg-blue-sky/20 text-accent border border-blue-sky/40',
+        badgeBg: 'bg-blue-sky text-bg-deep',
         icon: Zap,
       },
     ],
@@ -127,7 +127,7 @@ export const SCENARIOS: Scenario[] = [
           'Rewarding poor planning with your personal time teaches management that scope creep has no negative consequences, paving the way for chronic burnout.',
         script:
           '"I\'ll work on this over the weekend and have it ready!" (Sacrifices rest and personal boundaries).',
-        tagColor: 'bg-primary/25 text-accent border border-primary/40',
+        tagColor: 'bg-primary/25 text-white border border-primary/40',
         badgeBg: 'bg-primary text-white',
         icon: XCircle,
       },
@@ -142,7 +142,7 @@ export const SCENARIOS: Scenario[] = [
         script:
           '"I\'m happy to take this on, but since my plate is full, which of our current deliverables should we deprioritize or hand off to accommodate this new report?"',
         tagColor: 'bg-accent/20 text-accent border border-accent/40',
-        badgeBg: 'bg-accent text-dark',
+        badgeBg: 'bg-accent text-bg-deep',
         icon: CheckCircle2,
       },
       {
@@ -155,8 +155,8 @@ export const SCENARIOS: Scenario[] = [
           'Limits the damage by offering a restricted contribution that matches your actual available bandwidth.',
         script:
           '"I can put together a high-level summary by Tuesday, but I won\'t have time for the deep-dive analysis. Let me know if that summary works!"',
-        tagColor: 'bg-highlight/20 text-highlight border border-highlight/30',
-        badgeBg: 'bg-highlight text-dark',
+        tagColor: 'bg-blue-sky/20 text-accent border border-blue-sky/40',
+        badgeBg: 'bg-blue-sky text-bg-deep',
         icon: Award,
       },
     ],
@@ -178,7 +178,7 @@ export const SCENARIOS: Scenario[] = [
           'Mentoring is critical, but taking on three mentees simultaneously without workload reduction or formal recognition leads to severe cognitive and emotional drain.',
         script:
           '"Of course, I\'m happy to help them get settled!" (Silently absorbs 10+ weekly hours of mentoring).',
-        tagColor: 'bg-primary/25 text-accent border border-primary/40',
+        tagColor: 'bg-primary/25 text-white border border-primary/40',
         badgeBg: 'bg-primary text-white',
         icon: AlertTriangle,
       },
@@ -193,7 +193,7 @@ export const SCENARIOS: Scenario[] = [
         script:
           '"I would love to mentor one new team member this quarter to ensure they get quality support. Let\'s distribute the other two mentees across the rest of the senior team."',
         tagColor: 'bg-accent/20 text-accent border border-accent/40',
-        badgeBg: 'bg-accent text-dark',
+        badgeBg: 'bg-accent text-bg-deep',
         icon: CheckCircle2,
       },
       {
@@ -206,8 +206,8 @@ export const SCENARIOS: Scenario[] = [
           'If you must take on citizenship work, ensure it directly counts toward your leadership evaluation and promotion criteria.',
         script:
           '"I am glad to support onboarding. Let\'s make sure this mentorship role is officially documented in my goals as a core leadership deliverable for my upcoming review."',
-        tagColor: 'bg-highlight/20 text-highlight border border-highlight/30',
-        badgeBg: 'bg-highlight text-dark',
+        tagColor: 'bg-blue-sky/20 text-accent border border-blue-sky/40',
+        badgeBg: 'bg-blue-sky text-bg-deep',
         icon: Zap,
       },
     ],

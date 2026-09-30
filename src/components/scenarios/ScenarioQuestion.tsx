@@ -27,8 +27,8 @@ export const ScenarioQuestion: React.FC<ScenarioQuestionProps> = ({
       </div>
 
       {/* Situation Card */}
-      <div className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 space-y-4">
-        <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/25 text-accent border border-primary/40">
+      <div className="bg-bg-surface/50 border border-blue-sky/20 rounded-2xl p-6 sm:p-8 space-y-4">
+        <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/25 text-white border border-primary/40">
           {scenario.category}
         </span>
         <h3 className="text-xl font-bold text-white">{scenario.title}</h3>
@@ -39,7 +39,7 @@ export const ScenarioQuestion: React.FC<ScenarioQuestionProps> = ({
 
       {/* Options Prompt */}
       <div className="space-y-3">
-        <h4 className="text-xs font-bold text-white/60 uppercase tracking-wider">
+        <h4 className="text-xs font-bold text-blue-sky uppercase tracking-wider">
           How do you respond? Choose an approach:
         </h4>
         <div className="space-y-3">
@@ -48,7 +48,7 @@ export const ScenarioQuestion: React.FC<ScenarioQuestionProps> = ({
               type="button"
               key={option.id}
               onClick={() => onSelectOption(option)}
-              className="w-full text-left p-4 rounded-xl border border-white/10 bg-dark/60 hover:bg-dark hover:border-accent text-white font-medium text-sm transition-all flex items-start space-x-3 group cursor-pointer"
+              className="w-full text-left p-4 rounded-xl border border-white/10 bg-bg-surface/70 hover:bg-bg-surface hover:border-blue-sky text-white font-medium text-sm transition-all flex items-start space-x-3 group cursor-pointer"
             >
               <span className="w-6 h-6 rounded-lg bg-white/10 group-hover:bg-primary text-accent group-hover:text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 transition-colors">
                 {option.label}
