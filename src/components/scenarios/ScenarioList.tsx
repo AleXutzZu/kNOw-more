@@ -19,7 +19,7 @@ export const ScenarioList: React.FC<ScenarioListProps> = ({
           Real-World Workplace Scenarios
         </h2>
         <p className="text-text-muted text-sm sm:text-base max-w-md mx-auto">
-          Select a common professional situation to test how different response strategies impact your career, bandwidth, and standing.
+          Select a common professional situation to test how different response strategies impact your career.
         </p>
       </div>
 

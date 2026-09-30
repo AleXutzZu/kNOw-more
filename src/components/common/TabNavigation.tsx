@@ -16,7 +16,7 @@ export const TabNavigation: React.FC = () => {
         }
       >
         <GitBranch className="w-4 h-4" />
-        <span>Decision Tree Engine</span>
+        <span>Decision Tree Assistant</span>
       </NavLink>
       <NavLink
         to="/scenarios"
