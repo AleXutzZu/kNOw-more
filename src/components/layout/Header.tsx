@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
                         <span className="group-hover:text-primary transition-colors">kNOw MORE</span>
                     </h1>
                     <p className="text-xs text-blue-sky font-medium tracking-wide hidden sm:block">
-                        Strategic Work &amp; Boundary Blueprint for Women
+                        Work &amp; Boundary Decision Assistant
                     </p>
                 </div>
             </Link>
