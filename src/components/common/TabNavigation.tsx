@@ -23,7 +23,7 @@ export const TabNavigation: React.FC<TabNavigationProps> = ({
         }`}
       >
         <GitBranch className="w-4 h-4" />
-        <span>Decision Tree Engine</span>
+        <span>Decision Tree Aid</span>
       </button>
       <button
         type="button"
@@ -35,7 +35,7 @@ export const TabNavigation: React.FC<TabNavigationProps> = ({
         }`}
       >
         <Users className="w-4 h-4" />
-        <span>Scenario Role Play</span>
+        <span>Scenario Exercises</span>
       </button>
     </div>
   );

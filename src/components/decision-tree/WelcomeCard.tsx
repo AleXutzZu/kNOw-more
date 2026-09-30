@@ -8,9 +8,6 @@ interface WelcomeCardProps {
 export const WelcomeCard: React.FC<WelcomeCardProps> = ({ onStart }) => {
   return (
     <div className="text-center space-y-6 py-4 animate-fade-in">
-      <div className="inline-flex p-3.5 rounded-2xl bg-tag-bg text-primary mb-2 border border-tag-border shadow-md shadow-primary/10">
-        <Sparkles className="w-8 h-8" />
-      </div>
       <h2 className="text-2xl sm:text-3xl font-extrabold text-text-main tracking-tight">
         Should You Take On That Extra Work?
       </h2>
@@ -30,7 +27,6 @@ export const WelcomeCard: React.FC<WelcomeCardProps> = ({ onStart }) => {
       <div className="pt-6 border-t border-footer-border flex flex-wrap justify-center gap-6 text-xs text-text-muted font-medium">
         <span>✨ 4 Strategic Phases</span>
         <span>🛡️ Burnout Prevention</span>
-        <span>⚡ Zero Ambiguity</span>
       </div>
     </div>
   );

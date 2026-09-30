@@ -18,12 +18,9 @@ export const Header: React.FC = () => {
         <div>
           <h1 className="text-lg font-bold tracking-tight text-text-main flex items-center space-x-2">
             <span>The Overtime Filter</span>
-            <span className="text-xs px-2 py-0.5 rounded-full bg-tag-bg text-tag-text border border-tag-border font-semibold">
-              Pro Edition
-            </span>
           </h1>
           <p className="text-xs text-blue-sky font-medium tracking-wide">
-            Strategic Work &amp; Boundary Blueprint for Women
+            Work &amp; Boundary Decision Making
           </p>
         </div>
       </div>
@@ -50,11 +47,6 @@ export const Header: React.FC = () => {
           )}
         </button>
 
-        {/* Engine Status */}
-        <div className="hidden md:flex items-center space-x-2 text-xs text-text-muted bg-surface-base px-3.5 py-1.5 rounded-full border border-surface-border">
-          <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-sm shadow-accent/50" />
-          <span className="text-text-main font-medium">Engine Active</span>
-        </div>
       </div>
     </header>
   );
